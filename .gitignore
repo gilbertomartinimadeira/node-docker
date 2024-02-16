@@ -1,0 +1,31 @@
+# Node.js
+node_modules/
+
+# Visual Studio Code
+.vscode/
+.settings/
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+
+# Dependency directories
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Output of 'npm pack'
+*.tgz
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
