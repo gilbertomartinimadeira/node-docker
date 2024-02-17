@@ -34,4 +34,8 @@
 >docker compose up --build -d
 
 #PASS ARGUMENTS to docker build
-docker build --build-arg="NODE_ENV=production" -t gilmartmd/node-app-image  .
+>docker build --build-arg="NODE_ENV=production" -t gilmartmd/node-app-image  .
+
+>docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build 
+
+
