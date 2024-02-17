@@ -32,3 +32,6 @@
 #Build image and run the container using compose
 
 >docker compose up --build -d
+
+#PASS ARGUMENTS to docker build
+docker build --build-arg="NODE_ENV=production" -t gilmartmd/node-app-image  .
