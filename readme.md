@@ -38,4 +38,21 @@
 
 >docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build 
 
+#starts a specific service from dockercompose file , without spanning the dependencies, in this case, mongo
+
+>docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d node-app --no-deps
+
+#START MONGO
+docker run -d \
+  --name my-mongo-container \
+  -e MONGO_INITDB_ROOT_USERNAME=gil \
+  -e MONGO_INITDB_ROOT_PASSWORD=admin123 \
+  -v mongo-db:/data/db \
+  -p 27017:27017 \
+  mongo
+
+  #MANDATORY
+  const app = express();
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
