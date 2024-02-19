@@ -6,9 +6,12 @@ const app = express();
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-const postRouter = require('./routes/postRoutes');
+const postRoutes = require('./routes/postRoutes');
+const userRoutes = require('./routes/userRoutes');
 
-app.use("/api/v1/posts", postRouter);
+app.use("/api/v1/posts", postRoutes);
+app.use("/api/v1/users", userRoutes);
+
 
 
 const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/mydb?authSource=admin`;
