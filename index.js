@@ -4,6 +4,7 @@ const session = require('express-session');
 const redis = require('redis');
 let RedisStore = require("connect-redis").default;
 
+
 const { MONGO_USER, 
     MONGO_PASSWORD, 
     MONGO_IP, 
@@ -57,7 +58,13 @@ app.use(
       store: redisStore,
       resave: true, // required: force lightweight session keep alive (touch)
       saveUninitialized: true, // recommended: only save session when data exists
-      secret: SESSION_SECRET,
+      secret: SESSION_SECRET   ,
+      cookie : {
+        httpOnly: true,
+        secure: false,
+        resave: false,        
+        maxAge: 30000
+      } 
     }),
   );
 ///END OF REDIS CONFIG
