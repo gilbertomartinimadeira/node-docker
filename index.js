@@ -58,11 +58,11 @@ app.use(
       store: redisStore,
       resave: true, // required: force lightweight session keep alive (touch)
       saveUninitialized: true, // recommended: only save session when data exists
-      secret: SESSION_SECRET   ,
-      cookie : {
+      secret: SESSION_SECRET,
+      cookie : {    
         httpOnly: true,
         secure: false,
-        resave: false,        
+        resave: false,
         maxAge: 30000
       } 
     }),
