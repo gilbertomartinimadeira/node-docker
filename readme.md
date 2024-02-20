@@ -56,3 +56,15 @@ docker run -d \
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
+
+#using redis to auth using session
+
+npm install connect-redis express-session
+
+
+#RUN redis stack
+docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+
+npm i redis
+
+-V in compose forces renewal of anonymous volumes
