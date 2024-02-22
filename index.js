@@ -13,7 +13,6 @@ const { MONGO_USER,
     SESSION_SECRET, 
     REDIS_PORT} = require('./config/config');
 
-
 /// MONGO CONFIGURATION
 const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/mydb?authSource=admin`;
 
@@ -43,7 +42,6 @@ redisClient.connect()
 .catch((e) => {
     console.log(e)
 });    
-
 
 // Initialize store.
 let redisStore = new RedisStore({
@@ -80,11 +78,8 @@ const userRoutes = require('./routes/userRoutes');
 app.use("/api/v1/posts", postRoutes);
 app.use("/api/v1/users", userRoutes);
 
-
-
-
-app.get('/',    (req,res) => {
-    res.send('<h2>Hi There in development!!!</h2>');
+app.get('/api/v1',    (req,res) => {
+    res.send('<h2>node-app development</h2>');
 });
 
 const port = process.env.PORT || 3000;
@@ -92,4 +87,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on port ${port}`));
 
 
-//3:06:53
+//3:34:40

@@ -68,3 +68,8 @@ docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:lat
 npm i redis
 
 -V in compose forces renewal of anonymous volumes
+
+
+# List open files in ubuntu , check for used ports
+sudo lsof -i :27017
+
